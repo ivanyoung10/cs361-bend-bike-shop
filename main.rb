@@ -1,4 +1,4 @@
-!# /usr/bin/env ruby
+require './bike.rb'
 
 require_relative 'bike'
 
