@@ -1,9 +1,7 @@
-# Bike
 
 class Bike
 
   STANDARD_WEIGHT = 200 # lbs
-  MAX_CARGO_ITEMS = 10
 
   attr_accessor :id, :color, :price, :weight, :rented, :cargo_contents
 
@@ -13,19 +11,19 @@ class Bike
     @price = price
     @weight = weight
     @rented = rented
-    @cargo_contents = []
   end
 
   def rent!
     self.rented = true
   end
+  
+end
 
-  def add_cargo(item)
-    self.cargo_contents << item
-  end
-
-  def remove_cargo(item)
-    self.cargo_contents.remove(item)
+class Panier
+  attr_accessor :cargo_contents
+  MAX_CARGO_ITEMS = 10
+  def initialize
+    @cargo_contents = []
   end
 
   def pannier_capacity
@@ -37,3 +35,15 @@ class Bike
   end
 
 end
+
+class Cargo
+  attr_accessor :cargo_contents
+  def add_cargo(item)
+    self.cargo_contents << item
+  end
+
+  def remove_cargo(item)
+      self.cargo_contents.remove(item)
+  end
+
+end 
